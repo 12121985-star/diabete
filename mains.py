@@ -15,8 +15,9 @@ st.title("Diabetes Prediction App")
 st.write("Enter the following details to predict the likelihood of diabetes.") 
 
 input_data = [] 
-for col in X.columns: value = st.number_input(f"Enter {col}", min_value=0.0, step=0.1) 
-input_data.append(value)
+for col in X.columns: 
+  value = st.number_input(f"Enter {col}", min_value=0.0, step=0.1) 
+  input_data.append(value)
 
 if st.button("Predict"): 
   prediction = model.predict([input_data]) 
@@ -29,4 +30,5 @@ accuracy=accuracy_score(y_test, y_pred)
 st.write(f"Accuracy: {accuracy:.2f}")
 st.text("Classification Report:")
 st.text(classification_report(y.test, y_pred))
+
 
