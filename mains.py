@@ -26,10 +26,11 @@ if st.button("Predict"):
 
 st.subheader("Model Performance") 
 y_pred = model.predict(X_test)
-accuracy=accuracy_score(y_test, y_pred)
+accuracy = accuracy_score(y_test, y_pred)
 st.write(f"Accuracy: {accuracy:.2f}")
 st.text("Classification Report:")
 st.text(classification_report(y.test, y_pred))
+
 
 
 
